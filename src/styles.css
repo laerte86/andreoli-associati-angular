@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefefe;
+  color: #020202;
+}
+
+.hamburger {
+  position: relative;
+  width: 45px;
+  height: 2px;
+  background-color: #f2f2f2;
+}
