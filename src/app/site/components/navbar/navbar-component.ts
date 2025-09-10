@@ -10,7 +10,7 @@ import { Component, signal } from '@angular/core';
 export class NavbarComponent {
   logoNavBlack = 'assets/images/nav-logo/logo-nav-nero.png';
   logoNavWhite = 'assets/images/nav-logo/logo-nav-bianco.png';
-  toggleMenu = signal(true);
+  toggleMenu = signal(false);
 
   NAV_LINKS = [
     {
