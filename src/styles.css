@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import "primeicons/primeicons.css";
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefefe;
-  color: #020202;
+  color: #020617 !important;
+  background: var(--p-surface-0);
+  font-family: InterDisplay, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .hamburger {

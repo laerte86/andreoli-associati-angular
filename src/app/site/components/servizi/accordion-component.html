@@ -1,0 +1,40 @@
+<div (click)="onAccordionClick()" class="group py-6 lg:py-4 lg:pl-12 pr-6 lg:pr-8 pl-8 rounded-4xl flex flex-col items-start justify-between
+                        hover:bg-black dark:hover:bg-surface-0 transition-colors duration-500 cursor-pointer mb-2"
+    [ngClass]="{ 'bg-black': isBgVisible() }">
+
+    <div class="w-full flex justify-between items-center">
+        <div class="transition-colors group-hover:text-white" [ngClass]="{ 'text-white': isTextWhite() }">
+            <p class="text-2xl md:text-3xl">{{ service().title}}</p>
+        </div>
+
+        @if (service().iconUrl) {
+        <div class="transition-all hidden md:block">
+            <img class="w-14 transition-opacity duration-400 
+                                    opacity-0 group-hover:opacity-100 group-hover:delay-200"
+                [ngClass]="{ 'opacity-100': isOpen() }" [src]="service().iconUrl" alt="logo" />
+        </div>
+        }
+
+        <button class="w-20 h-20 rounded-full flex items-center justify-center
+                   text-black bg-transparent group-hover:text-white" [ngClass]="{ 'text-white': isTextWhite() }">
+            <i
+                [ngClass]="['pi pi-chevron-right', isOpen() ? 'rotate-90' : '', 'transition-transform duration-300']"></i>
+        </button>
+    </div>
+
+    <div class="overflow-hidden transition-[max-height] duration-700 ease-in-out" [ngClass]="{
+                    'max-h-screen': isOpen(),
+                    'max-h-0': !isOpen()
+                }">
+        @if (service().description) {
+        <p class="text-white">{{service().description}}</p>
+        }
+        <div class="p-6">
+            <ul class="list-disc" [ngClass]="{ 'text-white': isTextWhite() }">
+                @for (item of service().child; track item.id) {
+                <li>{{ item.title }}</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@
                 <img class="w-14 md:hidden" [src]="logoNavWhite" alt="logo" />
             </div>
             <ul (click)="toggleMenu.set(false)"
-                class="flex md:ml-8 flex-col flex-grow px-4 -mt-24 md:mt-0 md:h-auto justify-center md:flex-row gap-1 md:gap-5 lg:gap-10 uppercase text-5xl md:text-sm font-semibold">
+                class="flex md:ml-8 flex-col flex-grow px-4 -mt-24 md:mt-0 md:h-auto justify-center md:flex-row gap-1 md:gap-5 lg:gap-10 uppercase text-5xl md:text-sm">
                 @for (link of NAV_LINKS.slice(0, 2); track link.key) {
                 <li class="relative md:mr-20 md:overflow-hidden group cursor-pointer list-none">
                     <a class="block lg:group-hover:-translate-y-6 transition-transform ease-in-out duration-200"
