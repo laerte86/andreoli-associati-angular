@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, OnInit, signal } from '@angular/core';
-import { DividerModule } from 'primeng/divider';
 import { AccordionComponent } from './accordion-component';
 import { AccordionActionInterface, AccordionInterface } from '../../../model/service.interface';
+import { SectionTitleComponent } from '../section-title/section-title-component';
 
 @Component({
   selector: 'andreoli-services',
-  imports: [DividerModule, CommonModule, AccordionComponent],
+  imports: [CommonModule, AccordionComponent, SectionTitleComponent],
   templateUrl: './services-component.html',
   styleUrl: './services-component.css',
 })
