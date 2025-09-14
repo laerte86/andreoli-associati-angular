@@ -1,4 +1,4 @@
-import { Component, effect, OnInit, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SectionTitleComponent } from '../section-title/section-title-component';
 import { AboutUsCardInterface } from '../../../interface/about-us.interface';
 import { CommonModule } from '@angular/common';
@@ -11,8 +11,6 @@ import { TeamCardComponent } from './team-card-component';
   styleUrl: './about-us-component.css',
 })
 export class AboutUsComponent {
-  selectedCardId = signal<number | string | null>(null);
-
   team = signal<AboutUsCardInterface[]>([
     {
       id: 1,
@@ -46,8 +44,5 @@ export class AboutUsComponent {
     },
   ]);
 
-  previousCardId = signal<number | string | null>(null);
-  handleCardClick(event: string | number | null) {
-    this.selectedCardId.set(event);
-  }
+  selectedCardId = signal<number | string | null>(null);
 }

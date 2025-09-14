@@ -1,7 +1,7 @@
 @if (showNewCardType()) {
-<div class="text-[#020202] font-500 relative"
-    (click)="mobileDevice && isSelected() ? selectedCardId.emit(null) : selectedCardId.emit(item().id)"
-    (mouseenter)="selectedCardId.emit(item().id)" (mouseleave)="selectedCardId.emit(null)">
+<div class="text-[#020202] font-500 relative" (click)="selectCardId(item().id, $event)"
+    (mouseenter)="!mobileDevice && selectedCardId.set(item().id)"
+    (mouseleave)="!mobileDevice && selectedCardId.set(null)">
     <div class="relative w-[300px] overflow-hidden rounded-lg">
         <img class="w-full transition-all duration-200 ease-in-out transform" [class.scale-105]="isSelected()"
             [style.filter]="
@@ -13,16 +13,16 @@
         }
     </div>
 
-
     @if (isSelected()) {
     <div class="flex flex-col absolute bottom-0 right-0 p-4 text-white">
         <p class="font-semibold">{{ item().name }}</p>
         <span class="font-extralight">{{ item().job }}</span>
+
     </div>
     }
 </div>
 } @else {
-<div class="text-[#020202] font-500" (click)="selectedCardId.emit(item().id)">
+<div class="text-[#020202] font-500" (click)="selectedCardId.set(item().id)">
     <div class="relative">
         <div class="absolute inset-0"></div>
         <img class="mb-1 shadow-md w-[300px] grayscale hover:grayscale-0 focus:grayscale-0 transition-all duration-500"
