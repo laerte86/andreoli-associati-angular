@@ -59,7 +59,7 @@ export class AccordionComponent {
         }, 600);
       }
     } else {
-      this._isOpen.set(!this._isOpen());
+      this._isOpen.update((value) => !value);
     }
   }
 }
