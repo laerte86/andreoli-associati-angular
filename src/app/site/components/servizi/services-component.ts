@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, OnInit, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { AccordionComponent } from './accordion-component';
-import { AccordionActionInterface, AccordionInterface } from '../../../interface/service.interface';
+import { AccordionInterface } from '../../../interface/service.interface';
 import { SectionTitleComponent } from '../section-title/section-title-component';
 
 @Component({
@@ -10,7 +10,7 @@ import { SectionTitleComponent } from '../section-title/section-title-component'
   templateUrl: './services-component.html',
   styleUrl: './services-component.css',
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent {
   services = signal<AccordionInterface[]>([
     {
       id: 1,
@@ -83,49 +83,13 @@ export class ServicesComponent implements OnInit {
     },
   ]);
 
-  // Tiene traccia di quale accordion è aperto in modalità esclusiva
-  openAccordionId = signal<string | number | null>(null);
-
-  // Mappa per tenere traccia dello stato di ogni accordion in modalità non esclusiva
-  openStateMap = signal<Map<string | number, boolean>>(new Map());
-
-  // Segnale che decide la modalità di apertura
+  // Segnale di configurazione che decide la modalità di apertura
   openExclusive = signal(true);
 
-  ngOnInit(): void {
-    if (!this.openExclusive()) {
-      this.mapServices();
-    }
-  }
-
-  mapServices() {
-    this.openStateMap.update(() => {
-      const newMap = new Map<string | number, boolean>();
-      this.services().forEach((item) => newMap.set(item.id, false));
-      return newMap;
-    });
-  }
-
-  getOpenConfig(id: string | number): boolean {
-    if (this.openExclusive()) {
-      return this.openAccordionId() === id;
-    } else {
-      return this.openStateMap().get(id) || false;
-    }
-  }
+  // Tiene traccia di quale servizio è aperto in modalità esclusiva
+  selectedServiceId = signal<number | string | null>(null);
 
   sortedServices = computed(() => {
     return [...this.services()].sort((a, b) => a.order - b.order);
   });
-
-  handleAccordionClick(action: AccordionActionInterface): void {
-    if (this.openExclusive()) {
-      this.openAccordionId.set(this.openAccordionId() === action.accordionId ? null : action.accordionId);
-    } else {
-      this.openStateMap.update((map) => {
-        map.set(action.accordionId, !map.get(action.accordionId));
-        return map;
-      });
-    }
-  }
 }

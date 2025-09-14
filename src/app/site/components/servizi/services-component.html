@@ -3,8 +3,8 @@
         <andreoli-section-title title="Servizi." />
         <div class="flex flex-col p-4">
             @for (item of sortedServices(); track item.id) {
-            <andreoli-accordion [service]="item" [isOpen]="getOpenConfig(item.id)"
-                (accordionClicked)="handleAccordionClick($event)" />
+            <andreoli-accordion [service]="item" [(selectedServiceId)]="selectedServiceId"
+                [openExclusive]="openExclusive()" />
             }
         </div>
     </div>

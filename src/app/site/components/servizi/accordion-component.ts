@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, input, output, signal } from '@angular/core';
-import { AccordionActionInterface, AccordionInterface } from '../../../interface/service.interface';
+import { Component, computed, effect, input, model, signal } from '@angular/core';
+import { AccordionInterface } from '../../../interface/service.interface';
 
 @Component({
   selector: 'andreoli-accordion',
@@ -10,8 +10,15 @@ import { AccordionActionInterface, AccordionInterface } from '../../../interface
 })
 export class AccordionComponent {
   service = input.required<AccordionInterface>();
-  isOpen = input<boolean>(false);
-  accordionClicked = output<AccordionActionInterface>();
+  openExclusive = input.required<boolean>();
+  selectedServiceId = model<number | string | null>();
+
+  // Segnale che gestisce il cambiamento di stato locale in modalità non esclusiva
+  private _isOpen = signal(false);
+
+  isOpen = computed(() => {
+    return this.openExclusive() ? this.selectedServiceId() === this.service().id : this._isOpen();
+  });
 
   isBgVisible = signal(false);
   isTextWhite = signal(false);
@@ -37,10 +44,11 @@ export class AccordionComponent {
     }
   });
 
-  onAccordionClick(): void {
-    this.accordionClicked.emit({
-      accordionId: this.service().id,
-      isOpen: !this.isOpen(),
-    });
+  toggleAccordion() {
+    if (this.openExclusive()) {
+      this.isOpen() ? this.selectedServiceId.set(null) : this.selectedServiceId.set(this.service().id);
+    } else {
+      this._isOpen.update((value) => !value);
+    }
   }
 }
