@@ -52,8 +52,6 @@ export class AccordionComponent {
     if (this.openExclusive()) {
       if (!this.selectedServiceId()) {
         this.selectedServiceId.set(this.service().id);
-      } else if (this.isSelectedService()) {
-        this.selectedServiceId.set(null);
       } else {
         this.selectedServiceId.set(null);
         setTimeout(() => {
