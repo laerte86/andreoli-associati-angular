@@ -1,5 +1,6 @@
-<div (click)="toggleAccordion()" class="group py-6 lg:py-4 lg:pl-12 pr-6 lg:pr-8 pl-8 rounded-4xl flex flex-col items-start justify-between
-                        hover:bg-black dark:hover:bg-surface-0 transition-colors duration-500 cursor-pointer mb-2"
+<div (click)="toggleAccordion()"
+    class="group py-6 lg:py-4 lg:pl-12 pr-6 lg:pr-8 pl-8 rounded-4xl flex flex-col items-start justify-between
+                        hover:bg-black dark:hover:bg-surface-0 transition-colors duration-500 cursor-pointer mb-2 no-select"
     [ngClass]="{ 'bg-black': isBgVisible() }">
 
     <div class="w-full flex justify-between items-center">
