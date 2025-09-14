@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, OnInit, signal } from '@angular/core';
 import { AccordionComponent } from './accordion-component';
-import { AccordionActionInterface, AccordionInterface } from '../../../model/service.interface';
+import { AccordionActionInterface, AccordionInterface } from '../../../interface/service.interface';
 import { SectionTitleComponent } from '../section-title/section-title-component';
 
 @Component({

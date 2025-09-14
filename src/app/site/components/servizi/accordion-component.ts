@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, effect, input, model, output, signal } from '@angular/core';
-import { AccordionActionInterface, AccordionInterface } from '../../../model/service.interface';
+import { Component, effect, input, output, signal } from '@angular/core';
+import { AccordionActionInterface, AccordionInterface } from '../../../interface/service.interface';
 
 @Component({
   selector: 'andreoli-accordion',
