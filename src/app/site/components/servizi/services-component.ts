@@ -64,20 +64,44 @@ export class ServicesComponent {
     {
       id: 3,
       order: 3,
-      title: 'Prova serivizio',
+      title: 'Antincendio',
       iconUrl: 'assets/images/nav-logo/logo-nav-bianco.png',
       child: [
         {
           id: 1,
-          title: 'Prova1',
+          title: 'Progettazione di impianti antincendio',
         },
         {
           id: 2,
-          title: 'Prova2',
+          title: 'Pratiche di prevenzione incendi',
         },
         {
           id: 3,
-          title: 'Prova3',
+          title: 'Consulenza antincendio per attività non soggette al controllo dei vigili del fuoco',
+        },
+      ],
+    },
+    {
+      id: 4,
+      order: 4,
+      title: 'Architettura e design',
+      iconUrl: 'assets/images/nav-logo/logo-nav-bianco.png',
+      child: [
+        {
+          id: 1,
+          title: 'Progettazione architettonica',
+        },
+        {
+          id: 2,
+          title: 'Pratiche urbanistiche',
+        },
+        {
+          id: 3,
+          title: 'Direzione lavori',
+        },
+        {
+          id: 4,
+          title: 'Grafica (loghi industriali)',
         },
       ],
     },

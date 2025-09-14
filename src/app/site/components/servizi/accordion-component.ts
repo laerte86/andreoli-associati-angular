@@ -17,8 +17,12 @@ export class AccordionComponent {
   private _isOpen = signal(false);
 
   isOpen = computed(() => {
-    return this.openExclusive() ? this.selectedServiceId() === this.service().id : this._isOpen();
+    return this.openExclusive() ? this.isSelectedService() : this._isOpen();
   });
+
+  isSelectedService(): boolean {
+    return this.selectedServiceId() === this.service().id;
+  }
 
   isBgVisible = signal(false);
   isTextWhite = signal(false);
@@ -34,7 +38,7 @@ export class AccordionComponent {
         setTimeout(() => {
           this.isBgVisible.set(false);
           this.isTextWhite.set(false);
-        }, 500);
+        }, 400);
       } else {
         setTimeout(() => {
           this.isTextWhite.set(false);
@@ -46,9 +50,18 @@ export class AccordionComponent {
 
   toggleAccordion() {
     if (this.openExclusive()) {
-      this.isOpen() ? this.selectedServiceId.set(null) : this.selectedServiceId.set(this.service().id);
+      if (!this.selectedServiceId()) {
+        this.selectedServiceId.set(this.service().id);
+      } else if (this.isSelectedService()) {
+        this.selectedServiceId.set(null);
+      } else {
+        this.selectedServiceId.set(null);
+        setTimeout(() => {
+          this.selectedServiceId.set(this.service().id);
+        }, 600);
+      }
     } else {
-      this._isOpen.update((value) => !value);
+      this._isOpen.set(!this._isOpen());
     }
   }
 }
