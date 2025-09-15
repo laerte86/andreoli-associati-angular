@@ -3,10 +3,11 @@ import { NavbarComponent } from '../components/navbar/navbar-component';
 import { HeroComponent } from '../components/hero/hero-component';
 import { ServicesComponent } from '../components/servizi/services-component';
 import { AboutUsComponent } from '../components/about-us/about-us-component';
+import { ContactsComponent } from '../components/contacts/contacts-component';
 
 @Component({
   selector: 'andreoli-layout',
-  imports: [NavbarComponent, HeroComponent, ServicesComponent, AboutUsComponent],
+  imports: [NavbarComponent, HeroComponent, ServicesComponent, AboutUsComponent, ContactsComponent],
   templateUrl: './layout-component.html',
   styleUrl: './layout-component.css',
 })
