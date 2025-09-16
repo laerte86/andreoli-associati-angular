@@ -3,8 +3,9 @@
         <andreoli-section-title title="Chi siamo." />
         <div
             class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-[91rem] mx-auto justify-items-center justify-content-center gap-y-4">
-            @for (item of team(); track item.id) {
-            <andreoli-team-card [item]="item" [(selectedCardId)]="selectedCardId" />
+            @for (item of sortedServices(); track item.id) {
+            <andreoli-team-card [item]="item" [(selectedCardId)]="selectedCardId"
+                [showNewCardType]="showNewCardType()" />
             }
         </div>
     </div>

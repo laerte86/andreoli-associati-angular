@@ -13,7 +13,7 @@ export class TeamCardComponent {
   selectedCardId = model<number | string | null>();
   isSelected = computed(() => this.selectedCardId() === this.item().id);
   mobileDevice = window.innerWidth < 768;
-  showNewCardType = signal(true);
+  showNewCardType = input<boolean>();
 
   constructor(private elementRef: ElementRef) {}
 

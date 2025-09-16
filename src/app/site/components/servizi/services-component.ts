@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, linkedSignal, signal } from '@angular/core';
 import { AccordionComponent } from './accordion-component';
 import { AccordionInterface } from '../../../interface/service.interface';
 import { SectionTitleComponent } from '../section-title/section-title-component';
@@ -108,7 +108,7 @@ export class ServicesComponent {
   ]);
 
   // Segnale di configurazione che decide la modalità di apertura
-  openExclusive = signal(true);
+  openExsculsive = signal(true);
 
   // Tiene traccia di quale servizio è aperto in modalità esclusiva
   selectedServiceId = signal<number | string | null>(null);
