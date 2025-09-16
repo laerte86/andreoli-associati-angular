@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, effect, linkedSignal, signal } from '@angular/core';
-import { AccordionComponent } from './accordion-component';
-import { AccordionInterface } from '../../../interface/service.interface';
-import { SectionTitleComponent } from '../shared/section-title/section-title-component';
+import { Component, computed, signal } from '@angular/core';
+import { AccordionInterface } from '../../../../interface/service.interface';
+import { SectionTitleComponent } from '../../shared/section-title/section-title-component';
+import { ServiceItemComponent } from '../service-item/service-item-component';
 
 @Component({
-  selector: 'andreoli-services',
-  imports: [CommonModule, AccordionComponent, SectionTitleComponent],
-  templateUrl: './services-component.html',
-  styleUrl: './services-component.css',
+  selector: 'andreoli-services-list',
+  imports: [CommonModule, ServiceItemComponent, SectionTitleComponent],
+  templateUrl: './services-list-component.html',
+  styleUrl: './services-list-component.css',
 })
-export class ServicesComponent {
+export class ServicesListComponent {
   services = signal<AccordionInterface[]>([
     {
       id: 1,

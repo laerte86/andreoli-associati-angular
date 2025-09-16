@@ -1,6 +1,6 @@
 import { Component, computed, ElementRef, HostListener, input, model, signal } from '@angular/core';
-import { AboutUsCardInterface } from '../../../interface/about-us.interface';
 import { CommonModule } from '@angular/common';
+import { AboutUsCardInterface } from '../../../../interface/about-us.interface';
 
 @Component({
   selector: 'andreoli-team-card',

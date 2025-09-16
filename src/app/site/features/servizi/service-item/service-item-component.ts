@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, effect, input, model, signal } from '@angular/core';
-import { AccordionInterface } from '../../../interface/service.interface';
+import { AccordionInterface } from '../../../../interface/service.interface';
 
 @Component({
-  selector: 'andreoli-accordion',
+  selector: 'andreoli-service-item',
   imports: [CommonModule],
-  templateUrl: './accordion-component.html',
-  styleUrl: './accordion-component.css',
+  templateUrl: './service-item-component.html',
+  styleUrl: './service-item-component.css',
 })
-export class AccordionComponent {
+export class ServiceItemComponent {
   service = input.required<AccordionInterface>();
   openExclusive = input.required<boolean>();
   selectedServiceId = model<number | string | null>();

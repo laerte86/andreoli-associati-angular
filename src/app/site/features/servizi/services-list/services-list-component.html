@@ -3,7 +3,7 @@
         <andreoli-section-title title="Servizi." />
         <div class="flex flex-col p-4">
             @for (item of sortedServices(); track item.id) {
-            <andreoli-accordion [service]="item" [(selectedServiceId)]="selectedServiceId"
+            <andreoli-service-item [service]="item" [(selectedServiceId)]="selectedServiceId"
                 [openExclusive]="openExsculsive()" />
             }
         </div>

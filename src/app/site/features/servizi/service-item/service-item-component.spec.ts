@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccordionComponent } from './accordion-component';
+import { ServiceItemComponent } from './service-item-component';
 
 describe('AccordionComponent', () => {
-  let component: AccordionComponent;
-  let fixture: ComponentFixture<AccordionComponent>;
+  let component: ServiceItemComponent;
+  let fixture: ComponentFixture<ServiceItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccordionComponent]
-    })
-    .compileComponents();
+      imports: [ServiceItemComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(AccordionComponent);
+    fixture = TestBed.createComponent(ServiceItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
