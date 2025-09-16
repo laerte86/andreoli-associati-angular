@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { NavbarMenuInterface } from '../../../interface/navbar-menu.interface';
 
 @Component({
   selector: 'andreoli-navbar',
@@ -8,30 +9,30 @@ import { Component, signal } from '@angular/core';
   styleUrl: './navbar-component.css',
 })
 export class NavbarComponent {
-  logoNavBlack = 'assets/images/nav-logo/logo-nav-nero.png';
-  logoNavWhite = 'assets/images/nav-logo/logo-nav-bianco.png';
-  toggleMenu = signal(false);
-
-  NAV_LINKS = [
+  navLinks = signal<NavbarMenuInterface[]>([
     {
-      key: 'home',
+      id: '1',
       label: 'home',
       path: '#home',
     },
     {
-      key: 'servizi',
+      id: '2',
       label: 'servizi',
       path: '#servizi',
     },
     {
-      key: 'chi_siamo',
+      id: '3',
       label: 'chi siamo',
       path: '#chi_siamo',
     },
     {
-      key: 'contatti',
+      id: '4',
       label: 'contatti',
       path: '#contatti',
     },
-  ];
+  ]);
+
+  logoNavBlack = 'assets/images/nav-logo/logo-nav-nero.png';
+  logoNavWhite = 'assets/images/nav-logo/logo-nav-bianco.png';
+  toggleMenu = signal(false);
 }
