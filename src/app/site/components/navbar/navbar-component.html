@@ -1,7 +1,6 @@
-<header id="home" class="container md:mx-auto flex md:justify-center min-h-[96px] md:min-h-[95px]">
-    <nav class="relative flex items-center py-4">
-        <a class="px-8 md:z-50 py-2 hidden md:block md:absolute top-1/2 left-1/2 md:-translate-y-1/2 md:-translate-x-1/2"
-            href="#home">
+<header id="home" class="container md:mx-auto flex md:justify-between min-h-[96px] md:min-h-[95px]">
+    <nav class="flex items-center w-full">
+        <a class="md:z-50 py-2 hidden md:block" href="#home">
             <img class="w-14" [src]="logoNavBlack" alt="logo" />
         </a>
         <div class="z-40 flex flex-col text-[#fefefe] md:text-inherit h-lvh w-full md:h-auto md:w-auto top-0 left-full fixed md:static bg-[#020202] md:bg-transparent transition-transform duration-500 ease-in-out"
@@ -12,21 +11,8 @@
             </div>
             <ul (click)="toggleMenu.set(false)"
                 class="flex md:ml-8 flex-col flex-grow px-4 -mt-24 md:mt-0 md:h-auto justify-center md:flex-row gap-1 md:gap-5 lg:gap-10 uppercase text-5xl md:text-sm">
-                @for (link of NAV_LINKS.slice(0, 2); track link.key) {
-                <li class="relative md:mr-20 md:overflow-hidden group cursor-pointer list-none">
-                    <a class="block lg:group-hover:-translate-y-6 transition-transform ease-in-out duration-200"
-                        href="{{ link.path }}">
-                        {{ link.label }}
-                    </a>
-                    <span
-                        class="hidden lg:block absolute -bottom-6 group-hover:-translate-y-6 transition-transform ease-in-out duration-200">
-                        <a href="{{ link.path }}">{{ link.label }}</a>
-                    </span>
-                </li>
-                }
-
-                @for (link of NAV_LINKS.slice(2, 4); track link.key) {
-                <li class="relative md:ml-20 md:overflow-hidden group cursor-pointer list-none">
+                @for (link of NAV_LINKS; track link.key) {
+                <li class="relative md:overflow-hidden group cursor-pointer list-none">
                     <a class="block lg:group-hover:-translate-y-6 transition-transform ease-in-out duration-200"
                         href="{{ link.path }}">
                         {{ link.label }}
