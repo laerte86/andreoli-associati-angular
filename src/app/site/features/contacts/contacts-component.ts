@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionTitleComponent } from '../section-title/section-title-component';
+import { SectionTitleComponent } from '../shared/section-title/section-title-component';
 import { SocialComponent } from './social/social-component';
 import { FooterComponent } from './footer/footer-component';
 

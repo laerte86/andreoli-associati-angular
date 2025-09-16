@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, effect, linkedSignal, signal } from '@angular/core';
 import { AccordionComponent } from './accordion-component';
 import { AccordionInterface } from '../../../interface/service.interface';
-import { SectionTitleComponent } from '../section-title/section-title-component';
+import { SectionTitleComponent } from '../shared/section-title/section-title-component';
 
 @Component({
   selector: 'andreoli-services',

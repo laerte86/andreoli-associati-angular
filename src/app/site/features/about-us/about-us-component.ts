@@ -1,8 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
-import { SectionTitleComponent } from '../section-title/section-title-component';
 import { AboutUsCardInterface } from '../../../interface/about-us.interface';
 import { CommonModule } from '@angular/common';
 import { TeamCardComponent } from './team-card-component';
+import { SectionTitleComponent } from '../shared/section-title/section-title-component';
 
 @Component({
   selector: 'andreoli-about-us',

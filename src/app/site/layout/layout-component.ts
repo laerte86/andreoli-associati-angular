@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../components/navbar/navbar-component';
-import { HeroComponent } from '../components/hero/hero-component';
-import { ServicesComponent } from '../components/servizi/services-component';
-import { AboutUsComponent } from '../components/about-us/about-us-component';
-import { ContactsComponent } from '../components/contacts/contacts-component';
-import { GoTopComponent } from '../components/go-top/go-top-component';
+import { HeroComponent } from '../features/hero/hero-component';
+import { ContactsComponent } from '../features/contacts/contacts-component';
+import { GoTopComponent } from '../features/shared/go-top/go-top-component';
+import { NavbarComponent } from '../features/navbar/navbar-component';
+import { ServicesComponent } from '../features/servizi/services-component';
+import { AboutUsComponent } from '../features/about-us/about-us-component';
 
 @Component({
   selector: 'andreoli-layout',
