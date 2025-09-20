@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, effect, input, model, signal } from '@angular/core';
-import { AccordionInterface } from '../../../../interface/service.interface';
+import { ServiceItemInterface } from '../../../../interface/service.interface';
 
 @Component({
   selector: 'andreoli-service-item',
@@ -9,7 +9,7 @@ import { AccordionInterface } from '../../../../interface/service.interface';
   styleUrl: './service-item-component.css',
 })
 export class ServiceItemComponent {
-  service = input.required<AccordionInterface>();
+  service = input.required<ServiceItemInterface>();
   openExclusive = input.required<boolean>();
   selectedServiceId = model<number | string | null>();
 

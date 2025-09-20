@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
-import { AccordionInterface } from '../../../../interface/service.interface';
+import { ServiceItemInterface } from '../../../../interface/service.interface';
 import { SectionTitleComponent } from '../../shared/section-title/section-title-component';
 import { ServiceItemComponent } from '../service-item/service-item-component';
 
@@ -11,7 +11,7 @@ import { ServiceItemComponent } from '../service-item/service-item-component';
   styleUrl: './services-list-component.css',
 })
 export class ServicesListComponent {
-  services = signal<AccordionInterface[]>([
+  services = signal<ServiceItemInterface[]>([
     {
       id: 1,
       order: 1,
