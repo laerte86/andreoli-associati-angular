@@ -1,6 +1,5 @@
 <andreoli-navbar />
 <div class="container-fluid mx-auto">
-    <!-- <andreoli-services-list /> -->
     @for (item of orderedLayout(); track item.id) {
     <ng-container *ngComponentOutlet="item.component"></ng-container>
     }
