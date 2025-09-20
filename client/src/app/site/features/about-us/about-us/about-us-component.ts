@@ -55,8 +55,8 @@ export class AboutUsComponent {
       imgUrl: 'assets/images/about-us/aya_el_aouam.png',
     },
     {
-      id: 6,
-      order: 6,
+      id: 7,
+      order: 7,
       name: 'Irene D\'Alessandro',
       job: 'Progettista',
       imgUrl: 'assets/images/about-us/irene_d_alessandro.png',
