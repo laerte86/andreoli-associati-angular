@@ -47,6 +47,20 @@ export class AboutUsComponent {
       job: 'Amministrazione',
       imgUrl: 'assets/images/about-us/ornella_scialoia.png',
     },
+    {
+      id: 6,
+      order: 6,
+      name: 'Aya El Aouam',
+      job: 'Disegnatrice CAD',
+      imgUrl: 'assets/images/about-us/aya_el_aouam.png',
+    },
+    {
+      id: 6,
+      order: 6,
+      name: 'Irene D\'Alessandro',
+      job: 'Progettista',
+      imgUrl: 'assets/images/about-us/irene_d_alessandro.png',
+    }
   ]);
 
   // Segnale di configurazione che decide la modalità di visualizzazione

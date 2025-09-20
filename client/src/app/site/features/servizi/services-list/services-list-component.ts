@@ -108,7 +108,7 @@ export class ServicesListComponent {
   ]);
 
   // Segnale di configurazione che decide la modalità di apertura
-  openExsculsive = signal(true);
+  openExsculsive = signal(false);
 
   // Tiene traccia di quale servizio è aperto in modalità esclusiva
   selectedServiceId = signal<number | string | null>(null);
