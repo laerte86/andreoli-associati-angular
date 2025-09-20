@@ -10,7 +10,6 @@ export const componentMap: Record<string, () => Promise<any>> = {
   'go-top': () => import('../features/shared/go-top/go-top-component').then(m => m.GoTopComponent),
 };
 
-
 @Component({
   selector: 'andreoli-layout',
   imports: [NavbarComponent, NgComponentOutlet],
