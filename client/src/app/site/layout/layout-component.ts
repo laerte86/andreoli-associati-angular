@@ -1,8 +1,8 @@
 import { Component, computed, OnInit, signal, Type } from '@angular/core';
-import { NavbarComponent } from '../features/navbar/navbar-component';
 import { NgComponentOutlet } from '@angular/common';
 
 export const componentMap: Record<string, () => Promise<any>> = {
+  'navbar': () => import('../features/navbar/navbar-component').then(m => m.NavbarComponent),
   'hero': () => import('../features/hero/hero-component').then(m => m.HeroComponent),
   'services': () => import('../features/servizi/services-list/services-list-component').then(m => m.ServicesListComponent),
   'about': () => import('../features/about-us/about-us/about-us-component').then(m => m.AboutUsComponent),
@@ -12,7 +12,7 @@ export const componentMap: Record<string, () => Promise<any>> = {
 
 @Component({
   selector: 'andreoli-layout',
-  imports: [NavbarComponent, NgComponentOutlet],
+  imports: [NgComponentOutlet],
   templateUrl: './layout-component.html',
   styleUrl: './layout-component.css',
 })
@@ -20,10 +20,10 @@ export class LayoutComponent implements OnInit {
 layout = signal<LayoutInterface[]>([]);
 layoutFromDb = signal<LayoutModel[]>([
   { id: 1, order: 1, key: 'go-top' },
-  { id: 2, order: 2, key: 'hero' },
-  { id: 3, order: 3, key: 'services' },
-  { id: 4, order: 4, key: 'about' },
-  { id: 5, order: 5, key: 'services' },
+  { id: 2, order: 2, key: 'navbar' },
+  { id: 3, order: 3, key: 'hero' },
+  { id: 4, order: 4, key: 'services' },
+  { id: 5, order: 5, key: 'about' },
   { id: 6, order: 6, key: 'contacts' },
 ]);
 
